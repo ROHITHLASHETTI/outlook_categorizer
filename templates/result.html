@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Categorizer Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Categorized Emails</h1>
+    {% for category, emails in categorized_emails.items() %}
+        <h2>{{ category }}</h2>
+        <ul>
+            {% for email in emails %}
+                <li>{{ email }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
